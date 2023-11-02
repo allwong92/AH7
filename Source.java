@@ -41,10 +41,12 @@ class Source {
     // 2 -> 8 -> 3 -> -1 -> 7
     
     System.out.println("Sum of my list: ");
-    System.out.println(Source.sumList(a));
+    System.out.println(Source.sumList(a)); // 19
 
     Node<Integer> f = new Node<>(-10);
-    System.out.println("Sum of lonely list: " + Source.sumList(f));
+    System.out.println("Sum of lonely list: " + Source.sumList(f)); // -10
+    System.out.println("Did you know? 10 is the lonliest number because it's next to 1.");
+
     
     Node<Integer> g = new Node<>(-1);
     Node<Integer> h = new Node<>(-12);
@@ -55,9 +57,9 @@ class Source {
     h.next = i;
     i.next = a;
 
+    // -10 -> -1 -> -12 -> -9823 -> 2 -> 8 -> 3 -> -1 -> 7
 
-    System.out.println("Sum of negative list: " + Source.sumList(f) );
+    System.out.println("Sum of negative list: " + Source.sumList(f));   // -9827
     
-    System.out.println("Did you know? 10 is the lonliest number because it's next to 1.");
   }
 }
