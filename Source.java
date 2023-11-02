@@ -10,8 +10,20 @@ class Node<T> {
 
 class Source {
   public static int sumList(Node<Integer> head) {
-    // todo
-    return;
+    /*
+     * This method takes in the head of a linked list 
+     * with integers and returns the total sum of all values
+     * in the linked list.
+     */
+    int sum = 0;                        // to hold sum of linked list
+    Node<Integer> current_node = head;  // to hold current node
+
+    while (current_node != null){       // loop while current node is not null
+      sum += current_node.val;          // add value of current node to sum
+      current_node = current_node.next; // traverse to next node
+    }
+
+    return sum;
   }
 
   public static void main(String[] args) {
@@ -30,5 +42,22 @@ class Source {
     
     System.out.println("Sum of my list: ");
     System.out.println(Source.sumList(a));
+
+    Node<Integer> f = new Node<>(-10);
+    System.out.println("Sum of lonely list: " + Source.sumList(f));
+    
+    Node<Integer> g = new Node<>(-1);
+    Node<Integer> h = new Node<>(-12);
+    Node<Integer> i = new Node<>(-9823);
+
+    f.next = g;
+    g.next = h;
+    h.next = i;
+    i.next = a;
+
+
+    System.out.println("Sum of negative list: " + Source.sumList(f) );
+    
+    System.out.println("Did you know? 10 is the lonliest number because it's next to 1.");
   }
 }
